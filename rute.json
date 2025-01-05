@@ -1,0 +1,77 @@
+[
+  {
+    "nama": "Instagram",
+    "method": "GET",
+    "url": "/dl/igdl",
+    "param": "url=",
+    "iconname": "fa-brands fa-instagram",
+    "category": "DOWNLOADER"
+  },
+  {
+    "nama": "spotify",
+    "method": "GET",
+    "url": "/dl/spotify",
+    "param": "url=",
+    "iconname": "fa-brands fa-spotify",
+    "category": "DOWNLOADER"
+  },
+  {
+    "nama": "ytmp4",
+    "method": "GET",
+    "url": "/dl/ytmp4",
+    "param": "url=",
+    "iconname": "fa-brands fa-youtube",
+    "category": "DOWNLOADER"
+  },
+  {
+    "nama": "ytmp3",
+    "method": "GET",
+    "url": "/dl/ytmp3",
+    "param": "url=",
+    "iconname": "fa-brands fa-youtube",
+    "category": "DOWNLOADER"
+  },
+  {
+    "nama": "Brat",
+    "method": "GET",
+    "url": "/maker/brat",
+    "param": "text=",
+    "iconname": "fa-solid fa-wand-magic-sparkles",
+    "category": "MAKER"
+  },
+  {
+    "nama": "Indo",
+    "method": "GET",
+    "url": "/gallery/indo",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "Indo2",
+    "method": "GET",
+    "url": "/gallery/indo2",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "China",
+    "method": "GET",
+    "url": "/gallery/china",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "Cosplay",
+    "method": "GET",
+    "url": "/gallery/cosplay",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "Lumba",
+    "method": "GET",
+    "url": "/gallery/lumba",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  }
+]

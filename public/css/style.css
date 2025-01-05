@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Public Sans', sans-serif;
+  background-color: #1a1a1a;
+  color: #8833ff;
+  line-height: 1.6;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 34px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main-content {
+  display: none;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader {
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(165deg);
+}
+
+.loader:before, .loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before {
+  animation: before8 2s infinite;
+}
+
+.loader:after {
+  animation: after6 2s infinite;
+}
+
+@keyframes before8 {
+  0% { width: 0.5em; box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75); }
+  35% { width: 2.5em; box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75); }
+  70% { width: 0.5em; box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75); }
+  100% { box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75); }
+}
+
+@keyframes after6 {
+  0% { height: 0.5em; box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75); }
+  35% { height: 2.5em; box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75); }
+  70% { height: 0.5em; box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75); }
+  100% { box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75); }
+}
+
+.navbar {
+  background-color: #121212;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #383d45;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 8px 12px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.navbar .search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #f1f1f1;
+  flex: 1;
+  margin-left: 8px;
+}
+
+.navbar .avatar img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #8833ff;
+}
+
+.card {
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1000px;
+  width: calc(100% - 40px);
+}
+
+.card h5 {
+  color: #8833ff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #adb5bd;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #8833ff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #8833ff;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #8833ff;
+  color: #fff;
+}
+
+.table-container {
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  width: calc(100% - 40px);
+}
+
+.table-container h5 {
+  margin-bottom: 10px;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+  padding: 10px;
+  text-align: left;
+  color: #adb5bd;
+}
+
+.table-container th {
+  background-color: #262626;
+}
+
+.table-container td {
+  background-color: #1a1a1a;
+}
+
+.badge {
+  color: #8833ff;
+  padding: 10px 10px;
+  font-size: 15px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #f1f1f1;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #121212;
+  color: #adb5bd;
+  border-top: 1px solid #383d45;
+  margin-top: auto;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .search-bar {
+    width: 80%;
+  }
+
+  .card, .table-container {
+    width: calc(100% - 20px);
+  }
+}

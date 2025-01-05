@@ -1,0 +1,18 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "A simple REST API example using Express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2",
+    "playwright": "^1.49.1",
+    "qs": "^6.13.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -14,7 +14,7 @@ To add a new route to the API, simply add an entry in the `rute.json` file. For 
 {
     "nama": "Nama Route",
     "method": "GET",
-    "url": "/route/etc",
+    "url": "/route",
     "iconname": "fa-solid fa-images", // icon dari font awesome
     "category": "Kategori nya"
   }

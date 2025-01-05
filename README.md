@@ -1,6 +1,6 @@
 # 🚀 Express REST API
 
-A simple and fast REST API built with Node.js and Express created by [gopalasu].
+A simple and fast REST API built with Node.js and Express created by [gopalasu](https://github.com/Varrelkun).
 
 ## ✨ Features
 

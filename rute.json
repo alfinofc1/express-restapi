@@ -8,14 +8,6 @@
     "category": "DOWNLOADER"
   },
   {
-    "nama": "spotify",
-    "method": "GET",
-    "url": "/dl/spotify",
-    "param": "url=",
-    "iconname": "fa-brands fa-spotify",
-    "category": "DOWNLOADER"
-  },
-  {
     "nama": "ytmp4",
     "method": "GET",
     "url": "/dl/ytmp4",
@@ -30,14 +22,6 @@
     "param": "url=",
     "iconname": "fa-brands fa-youtube",
     "category": "DOWNLOADER"
-  },
-  {
-    "nama": "Brat",
-    "method": "GET",
-    "url": "/maker/brat",
-    "param": "text=",
-    "iconname": "fa-solid fa-wand-magic-sparkles",
-    "category": "MAKER"
   },
   {
     "nama": "Indo",

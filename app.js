@@ -15,7 +15,7 @@ app.use('/api', routes);
 app.get('/lol/routes', (req, res) => {
   fs.readFile(path.join(__dirname, 'rute.json'), 'utf8', (err, data) => {
     if (err) return res.status(500).json({ msg: "Error reading routes file" });
-    res.json(JSON.parse(data)); //mengirimkan data endpoint dalam format JSON
+    res.json(JSON.parse(data)); // mengirimkan data endpoint dalam format JSON
   });
 });
 

@@ -4,7 +4,7 @@ const fs = require('fs');
 const routes = require('./routes/route');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.set("json spaces",2);
 app.use(express.json());

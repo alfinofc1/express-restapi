@@ -59,17 +59,35 @@ router.get("/dl/ytmp3", async (req, res) => {
 });
 
 router.get('/dl/ytmp4', async (req, res) => {
-  const { data } = await axiosInstance.get(`https://gopal-drakor.vercel.app/api/drama/:page`);
-        res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
-    } catch {
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });
-    } finally {
-        console.log('Informasi - Cuaca request completed.');
+  const { url, resolution } = req.query;
+  if (!url) {
+    return res.status(400).json({
+      status: false,
+      message: "URL is required",
+    });
+  }
+  try {
+    const result = await YoutubeVideo(url, resolution);
+    if (!result.status) {
+      return res.status(400).json(result);
     }
+    res.status(200).json({
+      status: true,
+      message: "Success",
+      result: result.result,
+    });
+  } catch (error) {
+    console.error("Error processing ytmp4:", error.message);
+    res.status(500).json({
+      status: false,
+      message: "An error occurred while processing the request",
+      error: error.message,
+    });
+  }
 });
 
 // ------ cerpen ------- //
-router.get('/drakor', async (req, res, next) => {
+router.get('/drakor/page', async (req, res, next) => {
     try {
         const { data } = await axiosInstance.get(`https://gopal-drakor.vercel.app/api/drama/:page`);
         res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });

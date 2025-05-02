@@ -57,5 +57,12 @@
     "url": "/gallery/lumba",
     "iconname": "fa-solid fa-images",
     "category": "GALLERY"
+  },
+  {
+    "nama": "drakor",
+    "method": "GET",
+    "url": "drakor/page",
+    "iconname": "fa-solid fa-images",
+    "category": "drakor"
   }
 ]

@@ -60,7 +60,7 @@ router.get("/dl/ytmp3", async (req, res) => {
 
 router.get('/dl/ytmp4', async (req, res) => {
   try {
-    const result = await get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
+    const result = await get(`https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json`);
     if (!result.status) {
       return res.status(400).json(result);
     }
@@ -80,7 +80,16 @@ router.get('/dl/ytmp4', async (req, res) => {
 });
 
 //====game===//
-
+router.get('/asaotak', async (req, res) => {
+    try {
+        const { data } = await axiosInstance.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
+        res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
+    } catch {
+        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });
+    } finally {
+        console.log('Informasi - Cuaca request completed.');
+    }
+});
 
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {

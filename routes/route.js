@@ -28,7 +28,7 @@ router.get("/dl/ytmp3", async (req, res) => {
   if (!url) {
     return res.status(400).json({
       status: false,
-      creator: "© gopalasu",
+      creator: "© alfin",
       message: "[!] Masukkan parameter url"
     });
   }
@@ -43,7 +43,7 @@ router.get("/dl/ytmp3", async (req, res) => {
     }
     res.status(200).json({
       status: true,
-      creator: "© gopalasu",
+      creator: "© alfin",
       message: "Berhasil mengambil data MP3.",
       result: result.result
     });
@@ -86,8 +86,17 @@ router.get('/dl/ytmp4', async (req, res) => {
   }
 });
 
-// ------ Maker ------- //
-
+// ------ cerpen ------- //
+router.get('/drakor/page', async (req, res, next) => {
+    try {
+        const { data } = await axiosInstance.get(`https://gopal-drakor.vercel.app/api/drama/:page`);
+        res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
+    } catch {
+        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });
+    } finally {
+        console.log('Informasi - Cuaca request completed.');
+    }
+});
 // ------ Gallery ------- //
 router.get('/gallery/indo', async (req, res, next) => {
 	let femdom = (await axios.get('https://raw.githubusercontent.com/VarrelKun/data/refs/heads/main/gurl/indo.json')).data;

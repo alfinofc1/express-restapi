@@ -1,29 +1,5 @@
 [
   {
-    "nama": "Instagram",
-    "method": "GET",
-    "url": "/dl/igdl",
-    "param": "url=",
-    "iconname": "fa-brands fa-instagram",
-    "category": "DOWNLOADER"
-  },
-  {
-    "nama": "ytmp4",
-    "method": "GET",
-    "url": "/dl/ytmp4",
-    "param": "url=",
-    "iconname": "fa-brands fa-youtube",
-    "category": "DOWNLOADER"
-  },
-  {
-    "nama": "ytmp3",
-    "method": "GET",
-    "url": "/dl/ytmp3",
-    "param": "url=",
-    "iconname": "fa-brands fa-youtube",
-    "category": "DOWNLOADER"
-  },
-  {
     "nama": "Indo",
     "method": "GET",
     "url": "/gallery/indo",
@@ -59,10 +35,38 @@
     "category": "GALLERY"
   },
   {
-    "nama": "drakor",
+    "nama": "akira",
     "method": "GET",
-    "url": "drakor/page",
+    "url": "/akira",
     "iconname": "fa-solid fa-images",
-    "category": "drakor"
+    "category": "anime"
+  },
+  {
+    "nama": "akiyama",
+    "method": "GET",
+    "url": "/akiyama",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "boruto",
+    "method": "GET",
+    "url": "/boruto",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "itachi",
+    "method": "GET",
+    "url": "/itachi",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "lolo",
+    "method": "GET",
+    "url": "/loli",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
   }
 ]

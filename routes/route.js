@@ -145,7 +145,203 @@ router.get('/tebakgame', async (req, res) => {
         console.log('game - tebakgame request completed.');
     }
 });
-
+//===stiker===///
+router.get('/random/dinokuning', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/dino.jpg', data)
+			res.sendFile(__path + '/tmp/dino.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/patrick', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrick.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/amongus', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/among.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/animegif', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/animegif.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/animestick', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/animestick.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/dadu', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dadu.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/doge', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/doge.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/kawanspongebob', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/kawanspongebob.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/manusialidi', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/manusialidi.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/mukalu', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/mukalu.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/paimon', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/paimon.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/patrickgif', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrickgif.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/rabbit', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/rabbit.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/random', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/random.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/random/spongebob', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/spongebob.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+////===stiker==\\\
 router.get('/tebaklagu', async (req, res) => {
     try {
         const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/tebaklagu.json');

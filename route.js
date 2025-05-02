@@ -89,7 +89,7 @@ router.get('/dl/ytmp4', async (req, res) => {
 // ------ cerpen ------- //
 router.get('/drakor/page', async (req, res, next) => {
     try {
-        const { data } = await axiosInstance.get(`https://gopal-drakor.vercel.app/api/drama/:page`);
+        const { data } = await axiosInstance.get(`https://wajik-anime-api.vercel.app/otakudesu/home`);
         res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
     } catch {
         res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });

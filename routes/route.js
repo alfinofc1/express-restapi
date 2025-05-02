@@ -87,16 +87,42 @@ router.get('/dl/ytmp4', async (req, res) => {
 });
 
 // ------ cerpen ------- //
-router.get('/drakor/page', async (req, res, next) => {
-    try {
-        const { data } = await axiosInstance.get(`https://gopal-drakor.vercel.app/api/drama/:page`);
-        res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
-    } catch {
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });
-    } finally {
-        console.log('Informasi - Cuaca request completed.');
-    }
-});
+router.get('/akira', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/VarrelKun/data/refs/heads/main/gurl/indo.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/akiyama', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/akiyama.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/boruto', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/boruto.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/itachi', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/itachi.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/loli', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/loli.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+
 // ------ Gallery ------- //
 router.get('/gallery/indo', async (req, res, next) => {
 	let femdom = (await axios.get('https://raw.githubusercontent.com/VarrelKun/data/refs/heads/main/gurl/indo.json')).data;

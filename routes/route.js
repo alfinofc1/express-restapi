@@ -86,9 +86,23 @@ router.get('/dl/ytmp4', async (req, res) => {
   }
 });
 
+//====game===//
+router.get("/ai/lepton", (req, res) => {
+
+    axios.get('https://github.com/NzrlAfndi/Databasee/blob/main/games/asahotak.json')
+        .then((response) => {
+            const responseData = response.data; //Di sini mengambil informasi dari tautan di atas dan menaruhnya di sana untuk Anda
+            res.send({alfin: responseData});
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).send({status: false, owner: '@alfinof ', err: 'Server sedang sibuk sekarang. Coba lagi nanti'});
+        });
+});
+
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {
-	let femdom = (await axios.get('https://raw.githubusercontent.com/VarrelKun/data/refs/heads/main/gurl/indo.json')).data;
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/akira.json')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random)
 	res.set({'Content-Type': 'image/jpeg'})

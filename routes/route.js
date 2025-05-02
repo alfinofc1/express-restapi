@@ -82,7 +82,7 @@ router.get('/dl/ytmp4', async (req, res) => {
 //====game===//
 router.get('/asaotak', async (req, res) => {
     try {
-        const { data } = await axiosInstance.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
         res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
     } catch {
         res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });

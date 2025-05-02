@@ -59,15 +59,8 @@ router.get("/dl/ytmp3", async (req, res) => {
 });
 
 router.get('/dl/ytmp4', async (req, res) => {
-  const { url, resolution } = req.query;
-  if (!url) {
-    return res.status(400).json({
-      status: false,
-      message: "URL is required",
-    });
-  }
   try {
-    const result = await YoutubeVideo(url, resolution);
+    const result = await get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
     if (!result.status) {
       return res.status(400).json(result);
     }
@@ -87,12 +80,7 @@ router.get('/dl/ytmp4', async (req, res) => {
 });
 
 //====game===//
-router.get('/asaotak', async (req, res, next) => {
-	let femdom = (await axios.get('https://github.com/NzrlAfndi/Databasee/blob/main/games/asahotak.json')).data;
-	let random = femdom[Math.floor(Math.random() * femdom.length)]
-	var result = await getBuffer(random)
-	res.send(result)
-})
+
 
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {

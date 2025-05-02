@@ -83,13 +83,80 @@ router.get('/dl/ytmp4', async (req, res) => {
 router.get('/asaotak', async (req, res) => {
     try {
         const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
-        res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
+        res.json({ creator: "Alfin", result: true, message: "game - Asaotak", data: data });
     } catch {
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - asaotak bermasalah." });
     } finally {
-        console.log('Informasi - Cuaca request completed.');
+        console.log('game - asaotak request completed.');
     }
 });
+
+router.get('/caklontong', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/caklontong.json');
+        res.json({ creator: "Alfin", result: true, message: "game - caklontong", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - cak lontong bermasalah." });
+    } finally {
+        console.log('game - cak lontong request completed.');
+    }
+});
+
+router.get('/caklontong', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/caklontong.json');
+        res.json({ creator: "Alfin", result: true, message: "game - caklontong", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - cak lontong bermasalah." });
+    } finally {
+        console.log('game - cak lontong request completed.');
+    }
+});
+
+router.get('/family100', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/family100.json');
+        res.json({ creator: "Alfin", result: true, message: "game - family100", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - cak family100 bermasalah." });
+    } finally {
+        console.log('game - cak family100 request completed.');
+    }
+});
+
+router.get('/lengkapikalimat', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/lengkapikalimat.json');
+        res.json({ creator: "Alfin", result: true, message: "game - lengkapikalimat", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - lengkapikalimat bermasalah." });
+    } finally {
+        console.log('game - lengkapikalimat request completed.');
+    }
+});
+
+router.get('/tebakgame', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/tebakgame.json');
+        res.json({ creator: "Alfin", result: true, message: "game - tebakgame", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - tebakgame bermasalah." });
+    } finally {
+        console.log('game - tebakgame request completed.');
+    }
+});
+
+router.get('/tebaklagu', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/tebaklagu.json');
+        res.json({ creator: "Alfin", result: true, message: "game - tebaklagu", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - tebaklagu bermasalah." });
+    } finally {
+        console.log('game - tebaklagu request completed.');
+    }
+});
+
 
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {

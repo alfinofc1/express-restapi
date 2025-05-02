@@ -68,5 +68,40 @@
     "url": "/loli",
     "iconname": "fa-solid fa-images",
     "category": "anime"
-  }
+  },
+  {
+    "nama": "asaotak",
+    "method": "GET",
+    "url": "/asaotak",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "caklontong",
+    "method": "GET",
+    "url": "/caklontong",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "family100",
+    "method": "GET",
+    "url": "/family100",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "lengkapikalimat",
+    "method": "GET",
+    "url": "/lengkapikalimat",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "tebaklagu",
+    "method": "GET",
+    "url": "/tebaklagu",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
 ]

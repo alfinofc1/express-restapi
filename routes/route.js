@@ -87,18 +87,12 @@ router.get('/dl/ytmp4', async (req, res) => {
 });
 
 //====game===//
-router.get("/ai/lepton", (req, res) => {
-
-    axios.get('https://github.com/NzrlAfndi/Databasee/blob/main/games/asahotak.json')
-        .then((response) => {
-            const responseData = response.data; //Di sini mengambil informasi dari tautan di atas dan menaruhnya di sana untuk Anda
-            res.send({alfin: responseData});
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).send({status: false, owner: '@alfinof ', err: 'Server sedang sibuk sekarang. Coba lagi nanti'});
-        });
-});
+router.get('/asaotak', async (req, res, next) => {
+	let femdom = (await axios.get('https://github.com/NzrlAfndi/Databasee/blob/main/games/asahotak.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.send(result)
+})
 
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {

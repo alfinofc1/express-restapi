@@ -310,6 +310,30 @@ router.get('/yapping', async (req, res) => {
         console.log('Gambar dari  request completed.');
     }
 });
+
+router.get('/ttp', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/ttp?text=${encodeURIComponent(text)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

@@ -231,63 +231,11 @@ router.get('/soundcloud', async (req, res) => {
     	const query = req.query.query;
         if (!query) return res.status(400).json
         const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "soundcloud -", data: data });
+        res.json({ creator: "Alfin", result: true, message: "soundcloud -", data: });
     } catch {
         res.status(500).json({ creator: "@Alfin", result: false, message: "soundcloud - bermasalah." });
     } finally {
         console.log('soundcloud -request completed.');
-    }
-});
-
-router.get('/capcut', async (req, res) => {
-    try {
-    	const query = req.query.query;
-        if (!query) return res.status(400).json
-        const { data } = await axios.get('https://api.siputzx.my.id/api/d/capcut?url=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "capcut -", data: data });
-    } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "capcut - bermasalah." });
-    } finally {
-        console.log('capcut -request completed.');
-    }
-});
-
-router.get('/snackvideo', async (req, res) => {
-    try {
-    	const query = req.query.query;
-        if (!query) return res.status(400).json
-        const { data } = await axios.get('https://api.siputzx.my.id/api/d/snackvideo?url=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "snackvideo -", data: data });
-    } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "snackvideo - bermasalah." });
-    } finally {
-        console.log('snackvideo -request completed.');
-    }
-});
-
-router.get('/Instagram', async (req, res) => {
-    try {
-    	const query = req.query.query;
-        if (!query) return res.status(400).json
-        const { data } = await axios.get('https://api.siputzx.my.id/api/d/igdl?url=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "Instagram -", data: data });
-    } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "Instagram - bermasalah." });
-    } finally {
-        console.log('Instagram -request completed.');
-    }
-});
-
-router.get('/tiktok', async (req, res) => {
-    try {
-    	const query = req.query.query;
-        if (!query) return res.status(400).json
-        const { data } = await axios.get('https://api.siputzx.my.id/api/d/tiktok?url=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "tiktok -", data: data });
-    } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "tiktok - bermasalah." });
-    } finally {
-        console.log('tiktok -request completed.');
     }
 });
 //===stiker===///

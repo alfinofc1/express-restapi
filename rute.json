@@ -103,5 +103,61 @@
     "url": "/tebaklagu",
     "iconname": "fa-solid fa-images",
     "category": "game"
+  },
+  {
+    "nama": "spongebob",
+    "method": "GET",
+    "url": "/stiker/spongebob",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "stiker",
+    "method": "GET",
+    "url": "/stiker/stiker",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "rabbit",
+    "method": "GET",
+    "url": "/stiker/rabbit",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "patrickgif",
+    "method": "GET",
+    "url": "/stiker/patrickgif",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "paimon",
+    "method": "GET",
+    "url": "/stiker/paimon",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "mukalu",
+    "method": "GET",
+    "url": "/stiker/mukalu",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "kawanspongebob",
+    "method": "GET",
+    "url": "/stiker/kawanspongebob",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "dinokuning",
+    "method": "GET",
+    "url": "/stiker/dinokuning",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
   }
 ]

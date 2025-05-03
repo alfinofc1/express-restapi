@@ -328,18 +328,12 @@ router.get('/random/random', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/spongebob', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/spongebob.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+	router.get('/random/spongebob', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/spongebob.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
 ////===stiker==\\\
 router.get('/tebaklagu', async (req, res) => {

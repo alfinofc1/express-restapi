@@ -229,7 +229,7 @@ router.get('/jne', async (req, res) => {
         const query = req.query.query;
         if (!query) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter query!" });
 
-        const { data } = await axios.get.get(`https://api.binderbyte.com/v1/track?api_key=8e49f28e0f2f2cf56393c352613eec358e85fb7077ce6f7f453ebb826a7b1f6d&courier=jne&awb=582230008329223${encodeURIComponent(query)}`);
+        const { data } = await axios.get.get(`https://api.binderbyte.com/v1/track?api_key=8e49f28e0f2f2cf56393c352613eec358e85fb7077ce6f7f453ebb826a7b1f6d&courier=jne&awb=${encodeURIComponent(query)}`);
         res.json(data);
     } catch {
         res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mengambil data Spotify." });

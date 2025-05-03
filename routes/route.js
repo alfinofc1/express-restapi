@@ -358,6 +358,102 @@ router.get('/attp', async (req, res) => {
         console.log('Gambar dari  request completed.');
     }
 });
+
+router.get('/trigger', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/trigger?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/gif'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/wanted', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/wanted?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/png'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/beautiful', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/beautiful?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/png'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/darkness', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/darkness?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/png'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

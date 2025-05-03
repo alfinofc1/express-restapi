@@ -1,5 +1,26 @@
 [
 {
+    "nama": "mlbb",
+    "method": "text",
+    "url": "/mlbb?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+  {
+    "nama": "editor",
+    "method": "text",
+    "url": "/editor?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+  {
+    "nama": "yapping",
+    "method": "text",
+    "url": "/yapping?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+{
     "nama": "soundcloud",
     "method": "query",
     "url": "/soundcloud?query=dj",

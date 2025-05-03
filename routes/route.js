@@ -242,7 +242,7 @@ router.get('/soundcloud', async (req, res) => {
 router.get('/mlbb', async (req, res) => {
     try {
         const text = req.query.text;
-        if (!text) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter prompt!" });
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
         const response = await axios.get(`https://serti.vercel.app/mlbb/${encodeURIComponent(text)}`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
@@ -257,9 +257,57 @@ router.get('/mlbb', async (req, res) => {
         res.send(imageBuffer); // Kirim data gambar sebagai respons
     } catch (error) {
         console.error(error);
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mendapatkan gambar dari Stability AI.", error: error.message });
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
     } finally {
-        console.log('Gambar dari Stability AI request completed.');
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/editor', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://serti.vercel.app/editor/${encodeURIComponent(text)}`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/yapping', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://serti.vercel.app/yapping/${encodeURIComponent(text)}`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
     }
 });
 //===stiker===///

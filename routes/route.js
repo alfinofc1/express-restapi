@@ -443,7 +443,7 @@ router.get('/darkness', async (req, res) => {
         const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
 
         // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
-        res.setHeader('Content-Type', 'image/png'); // Asumsi: gambar adalah JPEG
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
         // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
 
         res.send(imageBuffer); // Kirim data gambar sebagai respons

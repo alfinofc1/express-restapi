@@ -1,12 +1,5 @@
 [
 {
-    "nama": "darkness",
-    "method": "url",
-    "url": "/darkness?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
-    "iconname": "fa-solid fa-images",
-    "category": "maker"
-  },
-{
     "nama": "beautiful",
     "method": "url",
     "url": "/beautiful?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",

@@ -231,7 +231,7 @@ router.get('/soundcloud', async (req, res) => {
     	const query = req.query.query;
         if (!query) return res.status(400).json
         const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "soundcloud -", data: });
+        res.json({ creator: "Alfin", result: true, message: "soundcloud -", data: data });
     } catch {
         res.status(500).json({ creator: "@Alfin", result: false, message: "soundcloud - bermasalah." });
     } finally {

@@ -211,6 +211,32 @@ router.get('/kumparan/news', async (req, res) => {
         console.log('berita -request completed.');
     }
 });
+
+//cek ressi//
+router.get('/kumparan/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/kumparan-news/');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
+    }
+});
+
+router.get('/jne', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter query!" });
+
+        const { data } = await axios.get.get(`https://api.binderbyte.com/v1/track?api_key=8e49f28e0f2f2cf56393c352613eec358e85fb7077ce6f7f453ebb826a7b1f6d&courier=jne&awb=582230008329223${encodeURIComponent(query)}`);
+        res.json(data);
+    } catch {
+        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mengambil data Spotify." });
+    } finally {
+        console.log('Spotify Search request completed.');
+    }
+});
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

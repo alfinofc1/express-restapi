@@ -239,12 +239,12 @@ router.get('/soundcloud', async (req, res) => {
     }
 });
 //===sertifikat===
-router.get('/ai/stabilityai', async (req, res) => {
+router.get('/mlbb', async (req, res) => {
     try {
-        const prompt = req.query.prompt;
-        if (!prompt) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter prompt!" });
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://api.siputzx.my.id/api/ai/stabilityai?prompt=${encodeURIComponent(prompt)}`, {
+        const response = await axios.get(`https://serti.vercel.app/mlbb/${encodeURIComponent(text)}`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });
 

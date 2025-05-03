@@ -239,15 +239,29 @@ router.get('/soundcloud', async (req, res) => {
     }
 });
 //===sertifikat===
-router.get('/mlbb', async (req, res, next) => {
-	const username = req.username.username;
-        if (!username) return res.status(400).json
-		let femdom = (await axios.get('https://serti.vercel.app/mlbb/${encodeURIComponent(username)}')).data;
-	let random = femdom[Math.floor(Math.random() * femdom.length)]
-	var result = await getBuffer(random)
-	res.set({'Content-Type': 'image/jpeg'})
-	res.send(result)
-})
+router.get('/ai/stabilityai', async (req, res) => {
+    try {
+        const prompt = req.query.prompt;
+        if (!prompt) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://api.siputzx.my.id/api/ai/stabilityai?prompt=${encodeURIComponent(prompt)}`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mendapatkan gambar dari Stability AI.", error: error.message });
+    } finally {
+        console.log('Gambar dari Stability AI request completed.');
+    }
+});
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

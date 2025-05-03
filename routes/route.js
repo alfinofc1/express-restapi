@@ -146,20 +146,14 @@ router.get('/tebakgame', async (req, res) => {
     }
 });
 //===stiker===///
-router.get('/random/dinokuning', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/dino.jpg', data)
-			res.sendFile(__path + '/tmp/dino.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+		router.get('/stiker/dinokuning', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-router.get('/random/patrick', async (req, res) => {
+router.get('/stiker/patrick', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrick.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -172,7 +166,7 @@ router.get('/random/patrick', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/amongus', async (req, res) => {
+router.get('/stiker/amongus', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/among.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -185,7 +179,7 @@ router.get('/random/amongus', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/animegif', async (req, res) => {
+router.get('/stiker/animegif', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/animegif.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -198,7 +192,7 @@ router.get('/random/animegif', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/animestick', async (req, res) => {
+router.get('/stiker/animestick', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/animestick.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -211,7 +205,7 @@ router.get('/random/animestick', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/dadu', async (req, res) => {
+router.get('/stiker/dadu', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dadu.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -224,7 +218,7 @@ router.get('/random/dadu', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/doge', async (req, res) => {
+router.get('/stiker/doge', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/doge.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -237,20 +231,14 @@ router.get('/random/doge', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/kawanspongebob', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/kawanspongebob.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+		router.get('/stiker/kawanspongebob', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/kawanspongebob.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-router.get('/random/manusialidi', async (req, res) => {
+router.get('/stiker/manusialidi', async (req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/manusialidi.json`))
 		.then(response => response.json())
 		.then(async data => {
@@ -263,72 +251,42 @@ router.get('/random/manusialidi', async (req, res) => {
 			console.error(e)
 		})
 })
-router.get('/random/mukalu', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/mukalu.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+		router.get('/stiker/mukalu', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/mukalu.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-router.get('/random/paimon', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/paimon.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+		router.get('/stiker/paimon', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/paimon.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-router.get('/random/patrickgif', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrickgif.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+	router.get('/stiker/patrickgif', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrickgif.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-router.get('/random/rabbit', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/rabbit.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+		router.get('/stiker/rabbit', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/rabbit.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-router.get('/random/random', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/random.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
+router.get('/stiker/random', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/random.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
 })
-	router.get('/random/spongebob', async (req, res, next) => {
+	router.get('/stiker/spongebob', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/spongebob.json')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random)

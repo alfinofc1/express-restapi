@@ -218,25 +218,76 @@ router.get('/Spotify', async (req, res) => {
     	const query = req.query.query;
         if (!query) return res.status(400).json
         const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+        res.json({ creator: "Alfin", result: true, message: "Spotify -", data: data });
     } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+        res.status(500).json({ creator: "@Alfin", result: false, message: "Spotify - bermasalah." });
     } finally {
-        console.log('berita -request completed.');
+        console.log('Spotify -request completed.');
     }
 });
 
-router.get('/jne', async (req, res) => {
+router.get('/soundcloud', async (req, res) => {
     try {
-        const query = req.query.query;
-        if (!query) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter query!" });
-
-        const { data } = await axios.get.get(`https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}`);
-        res.json(data);
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
+        res.json({ creator: "Alfin", result: true, message: "soundcloud -", data: data });
     } catch {
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mengambil data Spotify." });
+        res.status(500).json({ creator: "@Alfin", result: false, message: "soundcloud - bermasalah." });
     } finally {
-        console.log('Spotify Search request completed.');
+        console.log('soundcloud -request completed.');
+    }
+});
+
+router.get('/capcut', async (req, res) => {
+    try {
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/d/capcut?url=${encodeURIComponent(query)}');
+        res.json({ creator: "Alfin", result: true, message: "capcut -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "capcut - bermasalah." });
+    } finally {
+        console.log('capcut -request completed.');
+    }
+});
+
+router.get('/snackvideo', async (req, res) => {
+    try {
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/d/snackvideo?url=${encodeURIComponent(query)}');
+        res.json({ creator: "Alfin", result: true, message: "snackvideo -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "snackvideo - bermasalah." });
+    } finally {
+        console.log('snackvideo -request completed.');
+    }
+});
+
+router.get('/Instagram', async (req, res) => {
+    try {
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/d/igdl?url=${encodeURIComponent(query)}');
+        res.json({ creator: "Alfin", result: true, message: "Instagram -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "Instagram - bermasalah." });
+    } finally {
+        console.log('Instagram -request completed.');
+    }
+});
+
+router.get('/tiktok', async (req, res) => {
+    try {
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/d/tiktok?url=${encodeURIComponent(query)}');
+        res.json({ creator: "Alfin", result: true, message: "tiktok -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "tiktok - bermasalah." });
+    } finally {
+        console.log('tiktok -request completed.');
     }
 });
 //===stiker===///

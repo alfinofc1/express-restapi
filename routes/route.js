@@ -238,40 +238,32 @@ router.get('/stiker/doge', async (req, res) => {
 	res.set({'Content-Type': 'image/jpeg'})
 	res.send(result)
 })
-router.get('/stiker/manusialidi', async (req, res) => {
-	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/manusialidi.json`))
-		.then(response => response.json())
-		.then(async data => {
-			let hasil = data[Math.floor(Math.random() * data.length)]
-			let buffer = hasil;
-			data = await fetch(buffer).then(v => v.buffer())
-			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
-			res.sendFile(__path + '/tmp/images.jpg')
-		}).catch(e => {
-			console.error(e)
-		})
-})
-		router.get('/stiker/mukalu', async (req, res, next) => {
+
+router.get('/stiker/mukalu', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/mukalu.json')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random)
 	res.set({'Content-Type': 'image/jpeg'})
 	res.send(result)
 })
-		router.get('/stiker/paimon', async (req, res, next) => {
+
+router.get('/stiker/paimon', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/paimon.json')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random)
 	res.set({'Content-Type': 'image/jpeg'})
 	res.send(result)
 })
-	router.get('/stiker/patrickgif', async (req, res, next) => {
-		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrickgif.json')).data;
+
+
+router.get('/stiker/manusialidi', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/manusialidi.json')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random)
 	res.set({'Content-Type': 'image/jpeg'})
 	res.send(result)
 })
+
 		router.get('/stiker/rabbit', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/rabbit.json')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]

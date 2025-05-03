@@ -213,9 +213,11 @@ router.get('/kumparan/news', async (req, res) => {
 });
 
 //cek ressi//
-router.get('/kumparan/news', async (req, res) => {
+router.get('/Spotify', async (req, res) => {
     try {
-        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/kumparan-news/');
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
         res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
     } catch {
         res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });

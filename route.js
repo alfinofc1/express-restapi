@@ -59,15 +59,8 @@ router.get("/dl/ytmp3", async (req, res) => {
 });
 
 router.get('/dl/ytmp4', async (req, res) => {
-  const { url, resolution } = req.query;
-  if (!url) {
-    return res.status(400).json({
-      status: false,
-      message: "URL is required",
-    });
-  }
   try {
-    const result = await YoutubeVideo(url, resolution);
+    const result = await get(`https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json`);
     if (!result.status) {
       return res.status(400).json(result);
     }
@@ -86,17 +79,263 @@ router.get('/dl/ytmp4', async (req, res) => {
   }
 });
 
-// ------ cerpen ------- //
-router.get('/drakor/page', async (req, res, next) => {
+//====game===//
+router.get('/asaotak', async (req, res) => {
     try {
-        const { data } = await axiosInstance.get(`https://wajik-anime-api.vercel.app/otakudesu/home`);
-        res.json({ creator: "WANZOFC TECH", result: true, message: "Informasi - Cuaca", data: data });
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/asahotak.json');
+        res.json({ creator: "Alfin", result: true, message: "game - Asaotak", data: data });
     } catch {
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Informasi - Cuaca bermasalah." });
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - asaotak bermasalah." });
     } finally {
-        console.log('Informasi - Cuaca request completed.');
+        console.log('game - asaotak request completed.');
     }
 });
+
+router.get('/caklontong', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/caklontong.json');
+        res.json({ creator: "Alfin", result: true, message: "game - caklontong", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - cak lontong bermasalah." });
+    } finally {
+        console.log('game - cak lontong request completed.');
+    }
+});
+
+router.get('/caklontong', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/caklontong.json');
+        res.json({ creator: "Alfin", result: true, message: "game - caklontong", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - cak lontong bermasalah." });
+    } finally {
+        console.log('game - cak lontong request completed.');
+    }
+});
+
+router.get('/family100', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/family100.json');
+        res.json({ creator: "Alfin", result: true, message: "game - family100", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - cak family100 bermasalah." });
+    } finally {
+        console.log('game - cak family100 request completed.');
+    }
+});
+
+router.get('/lengkapikalimat', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/lengkapikalimat.json');
+        res.json({ creator: "Alfin", result: true, message: "game - lengkapikalimat", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - lengkapikalimat bermasalah." });
+    } finally {
+        console.log('game - lengkapikalimat request completed.');
+    }
+});
+
+router.get('/tebakgame', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/tebakgame.json');
+        res.json({ creator: "Alfin", result: true, message: "game - tebakgame", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - tebakgame bermasalah." });
+    } finally {
+        console.log('game - tebakgame request completed.');
+    }
+});
+//===stiker===///
+		router.get('/stiker/dinokuning', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/stiker/patrick', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/patrick.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/stiker/amongus', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/among.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/stiker/animegif', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/animegif.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/stiker/animestick', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/animestick.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/stiker/dadu', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dadu.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+router.get('/stiker/doge', async (req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/Kira-Master/database/main/sticker/doge.json`))
+		.then(response => response.json())
+		.then(async data => {
+			let hasil = data[Math.floor(Math.random() * data.length)]
+			let buffer = hasil;
+			data = await fetch(buffer).then(v => v.buffer())
+			await fs.writeFileSync(__path + '/tmp/images.jpg', data)
+			res.sendFile(__path + '/tmp/images.jpg')
+		}).catch(e => {
+			console.error(e)
+		})
+})
+		router.get('/stiker/kawanspongebob', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/kawanspongebob.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+
+router.get('/stiker/mukalu', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/mukalu.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+
+router.get('/stiker/paimon', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/paimon.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+
+
+router.get('/stiker/manusialidi', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/manusialidi.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+
+		router.get('/stiker/rabbit', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/rabbit.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/stiker/random', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/random.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+	router.get('/stiker/spongebob', async (req, res, next) => {
+		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/spongebob.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+////===stiker==\\\
+router.get('/tebaklagu', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/games/tebaklagu.json');
+        res.json({ creator: "Alfin", result: true, message: "game - tebaklagu", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - tebaklagu bermasalah." });
+    } finally {
+        console.log('game - tebaklagu request completed.');
+    }
+});
+//====textpro//
+
+
+// ------ cerpen ------- //
+router.get('/akira', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/akira.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/akiyama', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/akiyama.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/boruto', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/boruto.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/itachi', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/itachi.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/loli', async (req, res, next) => {
+	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/loli.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+
 // ------ Gallery ------- //
 router.get('/gallery/indo', async (req, res, next) => {
 	let femdom = (await axios.get('https://raw.githubusercontent.com/VarrelKun/data/refs/heads/main/gurl/indo.json')).data;

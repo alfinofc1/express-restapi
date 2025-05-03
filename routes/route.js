@@ -297,20 +297,7 @@ router.get('/tebaklagu', async (req, res) => {
     }
 });
 //====textpro//
-router.get('/textpro/grunge', async(req, res, next) => {
-var text = req.query.text
-if (!text) return res.json(loghandler.nottext)
-textpro("https://textpro.me/grunge-metallic-3d-text-effect-online-1115.html", [text]).then((data) =>{ 
-res.set({'Content-Type': 'image/jpg'})
-res.send(data)
-})
-.catch((err) =>{
-res.json(loghandler.error)
-})
-} else {
-res.json(loghandler.notapikey)
-}
-})
+
 
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {

@@ -149,11 +149,66 @@ router.get('/tebakgame', async (req, res) => {
 router.get('/antara-news/terkini', async (req, res) => {
     try {
         const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/antara-news/terkini');
-        res.json({ creator: "Alfin", result: true, message: "game - tebakgame", data: data });
+        res.json({ creator: "Alfin", result: true, message: "berita- terkini", data: data });
     } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "game - tebakgame bermasalah." });
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - terkini bermasalah." });
     } finally {
-        console.log('game - tebakgame request completed.');
+        console.log('berita- terkini request completed.');
+    }
+});
+
+router.get('/cnn', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/cnn-news');
+        res.json({ creator: "Alfin", result: true, message: "berita - cnn", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - cnn bermasalah." });
+    } finally {
+        console.log('berita - cnn request completed.');
+    }
+});
+
+router.get('/republika/new', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/republika-news');
+        res.json({ creator: "Alfin", result: true, message: "berita - republika news", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - republika news bermasalah." });
+    } finally {
+        console.log('berita - republika request completed.');
+    }
+});
+
+router.get('/tempo/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/tempo-news');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
+    }
+});
+
+router.get('/okezone/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/okezone-news');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
+    }
+});
+
+router.get('/kumparan/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/kumparan-news/');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
     }
 });
 //===stiker===///

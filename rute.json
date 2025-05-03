@@ -1,4 +1,46 @@
 [
+{
+    "nama": "tiktok",
+    "method": "url",
+    "url": "/tiktok?query=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+{
+    "nama": "Instagram",
+    "method": "url",
+    "url": "/Instagram?query=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+{
+    "nama": "snackvideo",
+    "method": "url",
+    "url": "/snackvideo?query=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+{
+    "nama": "capcut",
+    "method": "url",
+    "url": "/capcut?query=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+{
+    "nama": "soundcloud",
+    "method": "query",
+    "url": "/soundcloud?query=dj",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+{
+    "nama": "Spotify",
+    "method": "query",
+    "url": "/Spotify?query=menduakanmu",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
   {
     "nama": "Indo",
     "method": "GET",

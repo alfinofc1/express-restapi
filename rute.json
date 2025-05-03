@@ -138,5 +138,47 @@
     "url": "/stiker/dinokuning",
     "iconname": "fa-solid fa-images",
     "category": "stiker"
+  },
+  {
+    "nama": "terkini",
+    "method": "GET",
+    "url": "/antara-news/terkini",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "cnn",
+    "method": "GET",
+    "url": "/cnn",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "republika-new",
+    "method": "GET",
+    "url": "/republika/new",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "tempo-news",
+    "method": "GET",
+    "url": "/tempo/news",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "okezone-news",
+    "method": "GET",
+    "url": "/okezone/news",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "kumparan-news",
+    "method": "GET",
+    "url": "/kumparan/news",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
   }
 ]

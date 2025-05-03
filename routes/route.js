@@ -238,6 +238,16 @@ router.get('/soundcloud', async (req, res) => {
         console.log('soundcloud -request completed.');
     }
 });
+//===sertifikat===
+router.get('/mlbb', async (req, res, next) => {
+	const username = req.username.username;
+        if (!username) return res.status(400).json
+		let femdom = (await axios.get('https://serti.vercel.app/mlbb/${encodeURIComponent(username)}')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

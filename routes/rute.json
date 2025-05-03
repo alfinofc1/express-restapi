@@ -1,0 +1,142 @@
+[
+  {
+    "nama": "Indo",
+    "method": "GET",
+    "url": "/gallery/indo",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "Indo2",
+    "method": "GET",
+    "url": "/gallery/indo2",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "China",
+    "method": "GET",
+    "url": "/gallery/china",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "Cosplay",
+    "method": "GET",
+    "url": "/gallery/cosplay",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "Lumba",
+    "method": "GET",
+    "url": "/gallery/lumba",
+    "iconname": "fa-solid fa-images",
+    "category": "GALLERY"
+  },
+  {
+    "nama": "akira",
+    "method": "GET",
+    "url": "/akira",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "akiyama",
+    "method": "GET",
+    "url": "/akiyama",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "boruto",
+    "method": "GET",
+    "url": "/boruto",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "itachi",
+    "method": "GET",
+    "url": "/itachi",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "lolo",
+    "method": "GET",
+    "url": "/loli",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
+    "nama": "asaotak",
+    "method": "GET",
+    "url": "/asaotak",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "caklontong",
+    "method": "GET",
+    "url": "/caklontong",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "family100",
+    "method": "GET",
+    "url": "/family100",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "lengkapikalimat",
+    "method": "GET",
+    "url": "/lengkapikalimat",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "tebaklagu",
+    "method": "GET",
+    "url": "/tebaklagu",
+    "iconname": "fa-solid fa-images",
+    "category": "game"
+  },
+  {
+    "nama": "spongebob",
+    "method": "GET",
+    "url": "/stiker/spongebob",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "rabbit",
+    "method": "GET",
+    "url": "/stiker/rabbit",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "manusialidi",
+    "method": "GET",
+    "url": "/stiker/manusialidi",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "kawanspongebob",
+    "method": "GET",
+    "url": "/stiker/kawanspongebob",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  },
+  {
+    "nama": "dinokuning",
+    "method": "GET",
+    "url": "/stiker/dinokuning",
+    "iconname": "fa-solid fa-images",
+    "category": "stiker"
+  }
+]

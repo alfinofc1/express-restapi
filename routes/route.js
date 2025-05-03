@@ -145,6 +145,17 @@ router.get('/tebakgame', async (req, res) => {
         console.log('game - tebakgame request completed.');
     }
 });
+///berita menu///
+router.get('/antara-news/terkini', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/antara-news/terkini');
+        res.json({ creator: "Alfin", result: true, message: "game - tebakgame", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "game - tebakgame bermasalah." });
+    } finally {
+        console.log('game - tebakgame request completed.');
+    }
+});
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

@@ -112,13 +112,6 @@
     "category": "stiker"
   },
   {
-    "nama": "amongus",
-    "method": "GET",
-    "url": "/stiker/amongus",
-    "iconname": "fa-solid fa-images",
-    "category": "stiker"
-  },
-  {
     "nama": "rabbit",
     "method": "GET",
     "url": "/stiker/rabbit",
@@ -126,23 +119,9 @@
     "category": "stiker"
   },
   {
-    "nama": "patrickgif",
+    "nama": "manusialidi",
     "method": "GET",
-    "url": "/stiker/patrickgif",
-    "iconname": "fa-solid fa-images",
-    "category": "stiker"
-  },
-  {
-    "nama": "paimon",
-    "method": "GET",
-    "url": "/stiker/paimon",
-    "iconname": "fa-solid fa-images",
-    "category": "stiker"
-  },
-  {
-    "nama": "mukalu",
-    "method": "GET",
-    "url": "/stiker/mukalu",
+    "url": "/stiker/manusialidi",
     "iconname": "fa-solid fa-images",
     "category": "stiker"
   },

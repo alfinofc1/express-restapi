@@ -112,9 +112,9 @@
     "category": "stiker"
   },
   {
-    "nama": "stiker",
+    "nama": "amongus",
     "method": "GET",
-    "url": "/stiker/stiker",
+    "url": "/stiker/amongus",
     "iconname": "fa-solid fa-images",
     "category": "stiker"
   },

@@ -1,5 +1,47 @@
 [
 {
+    "nama": "darkness",
+    "method": "url",
+    "url": "/darkness?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "beautiful",
+    "method": "url",
+    "url": "/beautiful?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "wanted",
+    "method": "url",
+    "url": "/wanted?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "trigger",
+    "method": "url",
+    "url": "/trigger?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "attp",
+    "method": "text",
+    "url": "/attp?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "ttp",
+    "method": "text",
+    "url": "/ttp?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
     "nama": "mlbb",
     "method": "text",
     "url": "/mlbb?text=alfin",

@@ -213,16 +213,18 @@ router.get('/kumparan/news', async (req, res) => {
 });
 
 //cek ressi//
+
 router.get('/Spotify', async (req, res) => {
     try {
-    	const query = req.query.query;
-        if (!query) return res.status(400).json
-        const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "Spotify -", data: data });
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
+
+        const { data } = await axios.get(`https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian SoundCloud", data: data });
     } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "Spotify - bermasalah." });
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
-        console.log('Spotify -request completed.');
+        console.log('Hasil pencarian SoundCloud request completed.');
     }
 });
 

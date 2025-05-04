@@ -226,7 +226,7 @@ router.get('/Spotify', async (req, res) => {
     }
 });
 
-router.get('/s/soundcloud', async (req, res) => {
+router.get('/soundcloud', async (req, res) => {
     try {
         const query = req.query.query;
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });

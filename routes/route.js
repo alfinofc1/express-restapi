@@ -229,12 +229,12 @@ router.get('/Spotify', async (req, res) => {
 router.get('/s/soundcloud', async (req, res) => {
     try {
         const query = req.query.query;
-        if (!query) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter query!" });
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
 
-        const { data } = await axiosInstance.get(`https://api.siputzx.my.id/api/s/soundcloud?query=${encodeURIComponent(query)}`);
-        res.json({ creator: "WANZOFC TECH", result: true, message: "Hasil pencarian SoundCloud", data: data });
+        const { data } = await axios.get(`https://api.siputzx.my.id/api/s/soundcloud?query=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian SoundCloud", data: data });
     } catch {
-        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mendapatkan hasil dari SoundCloud." });
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
         console.log('Hasil pencarian SoundCloud request completed.');
     }

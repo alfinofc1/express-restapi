@@ -226,19 +226,19 @@ router.get('/Spotify', async (req, res) => {
     }
 });
 
-router.get('/soundcloud', async (req, res) => {
+router.get('/s/soundcloud', async (req, res) => {
     try {
-    	const query = req.query.query;
-        if (!query) return res.status(400).json
-        const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
-        res.json({ creator: "Alfin", result: true, message: "soundcloud -", data: data });
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter query!" });
+
+        const { data } = await axiosInstance.get(`https://api.siputzx.my.id/api/s/soundcloud?query=${encodeURIComponent(query)}`);
+        res.json({ creator: "WANZOFC TECH", result: true, message: "Hasil pencarian SoundCloud", data: data });
     } catch {
-        res.status(500).json({ creator: "@Alfin", result: false, message: "soundcloud - bermasalah." });
+        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mendapatkan hasil dari SoundCloud." });
     } finally {
-        console.log('soundcloud -request completed.');
+        console.log('Hasil pencarian SoundCloud request completed.');
     }
 });
-//===sertifikat===
 router.get('/mlbb', async (req, res) => {
     try {
         const text = req.query.text;
@@ -431,29 +431,7 @@ router.get('/beautiful', async (req, res) => {
     }
 });
 
-router.get('/darkness', async (req, res) => {
-    try {
-        const url = req.query.url;
-        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://alpis.eu.org/api/maker/darkness?url=${encodeURIComponent(url)}&apikey=c8370584`, {
-            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
-        });
-
-        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
-
-        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
-        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
-        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
-
-        res.send(imageBuffer); // Kirim data gambar sebagai respons
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
-    } finally {
-        console.log('Gambar dari  request completed.');
-    }
-});
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

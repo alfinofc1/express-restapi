@@ -145,6 +145,293 @@ router.get('/tebakgame', async (req, res) => {
         console.log('game - tebakgame request completed.');
     }
 });
+///berita menu///
+router.get('/antara-news/terkini', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/antara-news/terkini');
+        res.json({ creator: "Alfin", result: true, message: "berita- terkini", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - terkini bermasalah." });
+    } finally {
+        console.log('berita- terkini request completed.');
+    }
+});
+
+router.get('/cnn', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/cnn-news');
+        res.json({ creator: "Alfin", result: true, message: "berita - cnn", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - cnn bermasalah." });
+    } finally {
+        console.log('berita - cnn request completed.');
+    }
+});
+
+router.get('/republika/new', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/republika-news');
+        res.json({ creator: "Alfin", result: true, message: "berita - republika news", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - republika news bermasalah." });
+    } finally {
+        console.log('berita - republika request completed.');
+    }
+});
+
+router.get('/tempo/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/tempo-news');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
+    }
+});
+
+router.get('/okezone/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/okezone-news');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
+    }
+});
+
+router.get('/kumparan/news', async (req, res) => {
+    try {
+        const { data } = await axios.get('https://berita-indo-api-next.vercel.app/api/kumparan-news/');
+        res.json({ creator: "Alfin", result: true, message: "berita -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "berita - bermasalah." });
+    } finally {
+        console.log('berita -request completed.');
+    }
+});
+
+//cek ressi//
+router.get('/Spotify', async (req, res) => {
+    try {
+    	const query = req.query.query;
+        if (!query) return res.status(400).json
+        const { data } = await axios.get('https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}');
+        res.json({ creator: "Alfin", result: true, message: "Spotify -", data: data });
+    } catch {
+        res.status(500).json({ creator: "@Alfin", result: false, message: "Spotify - bermasalah." });
+    } finally {
+        console.log('Spotify -request completed.');
+    }
+});
+
+router.get('/s/soundcloud', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "WANZOFC TECH", result: false, message: "Harap masukkan parameter query!" });
+
+        const { data } = await axios.get(`https://api.siputzx.my.id/api/s/soundcloud?query=${encodeURIComponent(query)}`);
+        res.json({ creator: "WANZOFC TECH", result: true, message: "Hasil pencarian SoundCloud", data: data });
+    } catch {
+        res.status(500).json({ creator: "WANZOFC TECH", result: false, message: "Gagal mendapatkan hasil dari SoundCloud." });
+    } finally {
+        console.log('Hasil pencarian SoundCloud request completed.');
+    }
+});
+router.get('/mlbb', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://serti.vercel.app/mlbb/${encodeURIComponent(text)}`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/editor', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://serti.vercel.app/editor/${encodeURIComponent(text)}`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/yapping', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://serti.vercel.app/yapping/${encodeURIComponent(text)}`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/ttp', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/ttp?text=${encodeURIComponent(text)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/attp', async (req, res) => {
+    try {
+        const text = req.query.text;
+        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/attp?text=${encodeURIComponent(text)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/gif'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/trigger', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/trigger?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/gif'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/wanted', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/wanted?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/png'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+router.get('/beautiful', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
+
+        const response = await axios.get(`https://alpis.eu.org/api/maker/beautiful?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
+        });
+
+        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
+
+        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
+        res.setHeader('Content-Type', 'image/png'); // Asumsi: gambar adalah JPEG
+        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
+
+        res.send(imageBuffer); // Kirim data gambar sebagai respons
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
+    } finally {
+        console.log('Gambar dari  request completed.');
+    }
+});
+
+
 //===stiker===///
 		router.get('/stiker/dinokuning', async (req, res, next) => {
 		let femdom = (await axios.get('https://raw.githubusercontent.com/Kira-Master/database/main/sticker/dinokuning.json')).data;

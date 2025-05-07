@@ -220,7 +220,7 @@ router.get('/Spotify', async (req, res) => {
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
 
         const { data } = await axios.get(`https://api.siputzx.my.id/api/s/spotify?query=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian SoundCloud", data: data });
+        res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian", data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -239,6 +239,19 @@ router.get('/soundcloud', async (req, res) => {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
         console.log('Hasil pencarian SoundCloud request completed.');
+    }
+});
+router.get('/tiktok', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
+
+        const { data } = await axios.get(`https://api.kuromi.my.id/downloader/tiktok?url=${encodeURIComponent(url)}`);
+        res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
     }
 });
 router.get('/mlbb', async (req, res) => {

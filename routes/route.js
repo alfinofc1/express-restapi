@@ -437,49 +437,6 @@ router.get('/tiktok', async (req, res) => {
         console.log('Hasil pencarian request completed.');
     }
 });
-router.get('/tomp4', async (req, res, next) => {
-        var url = req.query.url,
-        if (!url) return res.json(loghandler.noturl)
-	if (!url.startsWith('http')) return res.json(loghandler.invalidLink)
-
-try {
-   axios.get(`https://ezgif.com/webp-to-mp4?url=${url}`).then(({ data }) => {
-           var $ = cheerio.load(data)
-           var bodyFormThen = new FormData()
-           var file = $('input[name="file"]').attr('value')
-	   var token = $('input[name="token"]').attr('value')
-           var convert = $('input[name="file"]').attr('value')
-           var gotdata = {
-                         file: file,
-                         token: token,
-                         convert: convert
-                         }
-                         bodyFormThen.append('file', gotdata.file)
-                         bodyFormThen.append('token', gotdata.token)
-                         bodyFormThen.append('convert', gotdata.convert)
-                         axios({
-                         method: 'post',
-                         url: 'https://ezgif.com/webp-to-mp4/' + gotdata.file,
-                         data: bodyFormThen,
-                         headers: {
-                         'Content-Type': `multipart/form-data; boundary=${bodyFormThen._boundary}`
-                         }}).then(({ data }) => {
-                         var $ = cheerio.load(data)
-                         var result = 'https:' + $('div#output > p.outfile > video > source').attr('src')
-
-	                       res.json({
-                                            status : true,
-                                            
-                                            result : result
-                                        })
-                             })
-                     })
-
- } catch (e) {
-          console.log(e);
-      res.sendFile(error)
-   }
-})
 router.get('/mlbb', async (req, res) => {
     try {
         const text = req.query.text;

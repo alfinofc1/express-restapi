@@ -1,4 +1,102 @@
 [
+{
+    "nama": "beautiful",
+    "method": "url",
+    "url": "/beautiful?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "wanted",
+    "method": "url",
+    "url": "/wanted?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "trigger",
+    "method": "url",
+    "url": "/trigger?url=https://i.pinimg.com/564x/b8/a8/e2/b8a8e281f1a3113630671742b5677c15.jpg",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "attp",
+    "method": "text",
+    "url": "/attp?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+  {
+    "nama": "brat",
+    "method": "text",
+    "url": "/brat?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "ttp",
+    "method": "text",
+    "url": "/ttp?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
+{
+    "nama": "mlbb",
+    "method": "text",
+    "url": "/mlbb?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+  {
+    "nama": "editor",
+    "method": "text",
+    "url": "/editor?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+  {
+    "nama": "yapping",
+    "method": "text",
+    "url": "/yapping?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+{
+    "nama": "soundcloud",
+    "method": "query",
+    "url": "/soundcloud?query=dj",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+  {
+    "nama": "ytmp3",
+    "method": "url",
+    "url": "/ytmp3?url=https://youtu.be/O2QiUN-7Rjw?si=ZU6_hLxCsF7_oG5T",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+  {
+    "nama": "ytmp4",
+    "method": "url",
+    "url": "/ytmp3?url=https://youtu.be/O2QiUN-7Rjw?si=ZU6_hLxCsF7_oG5T",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+  {
+    "nama": "tiktok",
+    "method": "url",
+    "url": "/tiktok?url=https://vt.tiktok.com/ZShkh2JRV/",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+{
+    "nama": "Spotify",
+    "method": "query",
+    "url": "/Spotify?query=menduakanmu",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
   {
     "nama": "Indo",
     "method": "GET",
@@ -138,5 +236,47 @@
     "url": "/stiker/dinokuning",
     "iconname": "fa-solid fa-images",
     "category": "stiker"
+  },
+  {
+    "nama": "terkini",
+    "method": "GET",
+    "url": "/antara-news/terkini",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "cnn",
+    "method": "GET",
+    "url": "/cnn",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "republika-new",
+    "method": "GET",
+    "url": "/republika/new",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "tempo-news",
+    "method": "GET",
+    "url": "/tempo/news",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "okezone-news",
+    "method": "GET",
+    "url": "/okezone/news",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
+  },
+  {
+    "nama": "kumparan-news",
+    "method": "GET",
+    "url": "/kumparan/news",
+    "iconname": "fa-solid fa-images",
+    "category": "berita"
   }
 ]

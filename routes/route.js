@@ -463,9 +463,7 @@ router.get('/mlbb', async (req, res) => {
 
 router.get('/random', async (req, res) => {
     try {
-        const text = req.query.text;
-        if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
-
+        
         const response = await axios.get(`https://toxicdevilapi.vercel.app/random/anime?type=sfw`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });

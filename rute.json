@@ -49,6 +49,13 @@
     "category": "sertifikat image"
   },
   {
+    "nama": "tolol",
+    "method": "text",
+    "url": "/tolol?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "sertifikat image"
+  },
+  {
     "nama": "editor",
     "method": "text",
     "url": "/editor?text=alfin",

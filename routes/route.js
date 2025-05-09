@@ -246,7 +246,7 @@ router.get('/ytmp3', async (req, res) => {
         const url = req.query.url;
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
 
-        const { data } = await axios.get(`https://api.ownblox.biz.id/api/ytdl?url=${encodeURIComponent(url)}&type=mp3`);
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/ytdl?url=${encodeURIComponent(url)}&type=mp3`);
         res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian", data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
@@ -259,8 +259,86 @@ router.get('/ytmp4', async (req, res) => {
         const url = req.query.url;
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
 
-        const { data } = await axios.get(`https://api.ownblox.biz.id/api/ytdl?url=${encodeURIComponent(url)}&type=mp4`);
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/ytdl?url=${encodeURIComponent(url)}&type=mp4`);
         res.json({ creator: "ALFINOFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/github', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukkan URL repository. Contoh: /gitclone?url=https://github.com/kikir/kakar" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/gitclone?url=${encodeURIComponent(url)}`);
+        res.json({ creator: "ALFINOFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/ytsearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "alfinofc" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/ytsearch?q=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINOFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/npmsearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "alfinofc" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/npmsearch?q=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINOFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/googlesearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "alfinofc" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/googlesearch?q=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINOFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/pinterestsearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "alfinofc" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/pinterest?q=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINOFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/githubsearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan nama github" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/githubstalk?username=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {

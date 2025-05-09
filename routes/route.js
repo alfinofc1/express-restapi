@@ -338,7 +338,7 @@ router.get('/wasearch', async (req, res) => {
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/searchgroups?q=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -351,7 +351,7 @@ router.get('/tiktoksearch', async (req, res) => {
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/ttsearch?q=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -364,7 +364,7 @@ router.get('/ai/llama-3.3-70b', async (req, res) => {
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/llama-3.3-70b-versatile?content=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -377,7 +377,7 @@ router.get('/ai/gemini', async (req, res) => {
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/gemini?text=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -391,7 +391,7 @@ router.get('/githubsearch', async (req, res) => {
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan nama github" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/githubstalk?username=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({ data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -404,7 +404,7 @@ router.get('/twitter', async (req, res) => {
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan url" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/twitterdl?url=${encodeURIComponent(url)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -417,7 +417,7 @@ router.get('/Facebook', async (req, res) => {
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan url" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/fbdl?url=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {
@@ -430,7 +430,7 @@ router.get('/tiktok', async (req, res) => {
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan url" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/ttdl?url=${encodeURIComponent(query)}`);
-        res.json({ creator: "ALFINFC", data: data });
+        res.json({  data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {

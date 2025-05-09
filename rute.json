@@ -161,6 +161,13 @@
     "category": "anime"
   },
   {
+    "nama": "random",
+    "method": "GET",
+    "url": "/random",
+    "iconname": "fa-solid fa-images",
+    "category": "anime"
+  },
+  {
     "nama": "akiyama",
     "method": "GET",
     "url": "/akiyama",

@@ -27,6 +27,13 @@
     "iconname": "fa-solid fa-images",
     "category": "maker"
   },
+  {
+    "nama": "brat",
+    "method": "text",
+    "url": "/brat?text=alfin",
+    "iconname": "fa-solid fa-images",
+    "category": "maker"
+  },
 {
     "nama": "ttp",
     "method": "text",
@@ -59,6 +66,13 @@
     "nama": "soundcloud",
     "method": "query",
     "url": "/soundcloud?query=dj",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+  {
+    "nama": "tiktok",
+    "method": "url",
+    "url": "/tiktok?url=https://vt.tiktok.com/ZShkh2JRV/",
     "iconname": "fa-solid fa-images",
     "category": "download"
   },

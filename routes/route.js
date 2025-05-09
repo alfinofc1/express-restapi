@@ -538,7 +538,7 @@ router.get('/ttp', async (req, res) => {
         const text = req.query.text;
         if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://alpis.eu.org/api/maker/ttp?text=${encodeURIComponent(text)}&apikey=c8370584`, {
+        const response = await axios.get(`https://huratera.sirv.com/PicsArt_08-01-10.00.42.png?profile=Example-Text&text.0.text=${encodeURIComponent(text)}`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });
 

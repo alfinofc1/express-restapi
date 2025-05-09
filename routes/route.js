@@ -461,28 +461,6 @@ router.get('/mlbb', async (req, res) => {
     }
 });
 
-router.get('/random', async (req, res) => {
-    try {
-        
-        const response = await axios.get(`https://toxicdevilapi.vercel.app/random/anime?type=sfw`, {
-            responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
-        });
-
-        const imageBuffer = Buffer.from(response.data, 'binary'); // Convert data to Buffer
-
-        // Tetapkan Content-Type berdasarkan jenis gambar (sesuaikan jika perlu)
-        res.setHeader('Content-Type', 'image/jpeg'); // Asumsi: gambar adalah JPEG
-        // Opsi lain: 'image/png', 'image/gif', dll. Tergantung jenis gambar yang dikembalikan API.
-
-        res.send(imageBuffer); // Kirim data gambar sebagai respons
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ creator: "ALFIN", result: false, message: "Gagal mendapatkan gambar dari .", error: error.message });
-    } finally {
-        console.log('Gambar dari  request completed.');
-    }
-});
-
 router.get('/editor', async (req, res) => {
     try {
         const text = req.query.text;
@@ -833,6 +811,13 @@ router.get('/tebaklagu', async (req, res) => {
 // ------ cerpen ------- //
 router.get('/akira', async (req, res, next) => {
 	let femdom = (await axios.get('https://raw.githubusercontent.com/NzrlAfndi/Databasee/refs/heads/main/anime/akira.json')).data;
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
+	var result = await getBuffer(random)
+	res.set({'Content-Type': 'image/jpeg'})
+	res.send(result)
+})
+router.get('/random', async (req, res, next) => {
+	let femdom = (await axios.get('https://toxicdevilapi.vercel.app/random/anime?type=sfw')).data;
 	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random)
 	res.set({'Content-Type': 'image/jpeg'})

@@ -90,6 +90,27 @@
     "iconname": "fa-solid fa-images",
     "category": "download"
   },
+  {
+    "nama": "Twitter",
+    "method": "url",
+    "url": "/twitter?url=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+  {
+    "nama": "Facebook",
+    "method": "url",
+    "url": "/Facebook?url=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
+  {
+    "nama": "tiktok",
+    "method": "url",
+    "url": "/tiktok?url=",
+    "iconname": "fa-solid fa-images",
+    "category": "download"
+  },
 {
     "nama": "Spotify",
     "method": "query",
@@ -289,7 +310,7 @@
   {
     "nama": "npm search",
     "method": "query",
-    "url": "/npm?query=axios",
+    "url": "/npmsearch?query=axios",
     "iconname": "fa-solid fa-images",
     "category": "search"
   },
@@ -314,4 +335,32 @@
     "iconname": "fa-solid fa-images",
     "category": "search"
   }
+  {
+    "nama": "grub wa search",
+    "method": "query",
+    "url": "/wasearch?query=free fire",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
+  {
+    "nama": "tiktok search",
+    "method": "query",
+    "url": "/tiktoksearch?query=Alfinofc",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
+  {
+    "nama": "ai llama-3.3-70b",
+    "method": "query",
+    "url": "/ai/llama-3.3-70b?query=hallo",
+    "iconname": "fa-solid fa-images",
+    "category": "ai"
+  },
+  {
+    "nama": "ai gemini",
+    "method": "query",
+    "url": "/ai/gemini?query=apa itu domba",
+    "iconname": "fa-solid fa-images",
+    "category": "ai"
+  },
 ]

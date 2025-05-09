@@ -241,12 +241,25 @@ router.get('/soundcloud', async (req, res) => {
         console.log('Hasil pencarian SoundCloud request completed.');
     }
 });
-router.get('/tiktok', async (req, res) => {
+router.get('/ytmp3', async (req, res) => {
     try {
         const url = req.query.url;
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
 
-        const { data } = await axios.get(`https://velynapi.vercel.app/api/downloader/ytmp3?url=${encodeURIComponent(url)}`);
+        const { data } = await axios.get(`https://api.ownblox.biz.id/api/ytdl?url=${encodeURIComponent(url)}&type=mp3`);
+        res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/ytmp4', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
+
+        const { data } = await axios.get(`https://api.ownblox.biz.id/api/ytdl?url=${encodeURIComponent(url)}&type=mp4`);
         res.json({ creator: "ALFIN", result: true, message: "Hasil pencarian", data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });

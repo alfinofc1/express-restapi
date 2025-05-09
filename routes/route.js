@@ -332,12 +332,104 @@ router.get('/pinterestsearch', async (req, res) => {
         console.log('Hasil pencarian request completed.');
     }
 });
+router.get('/wasearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/searchgroups?q=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/tiktoksearch', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/ttsearch?q=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/ai/llama-3.3-70b', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/llama-3.3-70b-versatile?content=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/ai/gemini', async (req, res) => {
+    try {
+        const query = req.query.query;
+        if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan Nama grub wa" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/gemini?text=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+
 router.get('/githubsearch', async (req, res) => {
     try {
         const query = req.query.query;
         if (!query) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan nama github" });
 
         const { data } = await axios.get(`https://alfinapi.vercel.app/api/githubstalk?username=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/twitter', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan url" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/twitterdl?url=${encodeURIComponent(url)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/Facebook', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan url" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/fbdl?url=${encodeURIComponent(query)}`);
+        res.json({ creator: "ALFINFC", data: data });
+    } catch {
+        res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
+    } finally {
+        console.log('Hasil pencarian request completed.');
+    }
+});
+router.get('/tiktok', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Masukan url" });
+
+        const { data } = await axios.get(`https://alfinapi.vercel.app/api/ttdl?url=${encodeURIComponent(query)}`);
         res.json({ creator: "ALFINFC", data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });

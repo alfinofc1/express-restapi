@@ -334,7 +334,7 @@
     "url": "/githubsearch?query=",
     "iconname": "fa-solid fa-images",
     "category": "search"
-  }
+  },
   {
     "nama": "grub wa search",
     "method": "query",

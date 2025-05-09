@@ -84,9 +84,9 @@
     "category": "download"
   },
   {
-    "nama": "tiktok",
+    "nama": "github",
     "method": "url",
-    "url": "/tiktok?url=https://vt.tiktok.com/ZShkh2JRV/",
+    "url": "/github?url=",
     "iconname": "fa-solid fa-images",
     "category": "download"
   },
@@ -278,5 +278,40 @@
     "url": "/kumparan/news",
     "iconname": "fa-solid fa-images",
     "category": "berita"
-  }
+  },
+  {
+    "nama": "YouTube search",
+    "method": "query",
+    "url": "/ytsearch?query=alfinofc",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
+  {
+    "nama": "npm search",
+    "method": "query",
+    "url": "/npm?query=axios",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
+  {
+    "nama": "google search",
+    "method": "query",
+    "url": "/googlesearch?query=domba",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
+  {
+    "nama": "pinterest search",
+    "method": "query",
+    "url": "/pinterestsearch?query=naruto",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
+  {
+    "nama": "github search",
+    "method": "query",
+    "url": "/githubsearch?query=",
+    "iconname": "fa-solid fa-images",
+    "category": "search"
+  },
 ]

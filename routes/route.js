@@ -260,7 +260,7 @@ router.get('/ytmp4', async (req, res) => {
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter query!" });
 
         const { data } = await axios.get(`https://api.ownblox.biz.id/api/ytdl?url=${encodeURIComponent(url)}&type=mp4`);
-        res.json({ creator: "ALFIN", data: data });
+        res.json({ creator: "ALFINOFC", data: data });
     } catch {
         res.status(500).json({ creator: "ALFIN", result: false, message: "maintenance" });
     } finally {

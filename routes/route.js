@@ -562,7 +562,7 @@ router.get('/attp', async (req, res) => {
         const text = req.query.text;
         if (!text) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://alpis.eu.org/api/maker/attp?text=${encodeURIComponent(text)}&apikey=c8370584`, {
+        const response = await axios.get(`https://alpis.eu.org/api/maker/attp?text=${encodeURIComponent(text)}&apikey=ef624b2f`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });
 
@@ -610,7 +610,7 @@ router.get('/trigger', async (req, res) => {
         const url = req.query.url;
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://alpis.eu.org/api/maker/trigger?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+        const response = await axios.get(`https://alpis.eu.org/api/maker/trigger?url=${encodeURIComponent(url)}&apikey=ef624b2f`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });
 
@@ -634,7 +634,7 @@ router.get('/wanted', async (req, res) => {
         const url = req.query.url;
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://alpis.eu.org/api/maker/wanted?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+        const response = await axios.get(`https://alpis.eu.org/api/maker/wanted?url=${encodeURIComponent(url)}&apikey=ef624b2f`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });
 
@@ -658,7 +658,7 @@ router.get('/beautiful', async (req, res) => {
         const url = req.query.url;
         if (!url) return res.status(400).json({ creator: "ALFIN", result: false, message: "Harap masukkan parameter prompt!" });
 
-        const response = await axios.get(`https://alpis.eu.org/api/maker/beautiful?url=${encodeURIComponent(url)}&apikey=c8370584`, {
+        const response = await axios.get(`https://alpis.eu.org/api/maker/beautiful?url=${encodeURIComponent(url)}&apikey=ef624b2f`, {
             responseType: 'arraybuffer' // Penting: minta respons sebagai arraybuffer
         });
 
